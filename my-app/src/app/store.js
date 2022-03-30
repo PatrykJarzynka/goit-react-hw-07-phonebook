@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import newReducer from "../features2/contactsSlice"
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    counter: newReducer,
   },
 });
