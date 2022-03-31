@@ -12,7 +12,7 @@ function ContactList({ list, filter, onClick }) {
     .filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()))
     .map(contact => (
       <li key={nanoid()}>
-        {contact.name}:{contact.number}
+        {contact.name}:{contact.phone}
         <Button type="button" label="Delete" onClick={() => onClick(contact.id)} />
       </li>
     ));

@@ -1,10 +1,14 @@
 // A mock function to mimic making an async request for data
-import api from "../services/api";
+import api from '../services/api';
 
 export function fetchContacts() {
- return api.get('/contacts');
+  return api.get('/contacts');
 }
 
 export function postContacts(contact) {
-  return api.post("/contacts", contact);
+  return api.post('/contacts', contact);
+}
+
+export function deleteContact(id) {
+  return api.delete(`/contacts/${id}`);
 }
