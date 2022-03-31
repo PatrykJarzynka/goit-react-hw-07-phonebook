@@ -50,7 +50,7 @@ function App() {
 
   const handleFilter = event => {
     const value = event.target.value;
-    if (event.target.name === 'filter') dispatch(filterContacts(value));
+    dispatch(filterContacts(value));
   };
 
   return (
