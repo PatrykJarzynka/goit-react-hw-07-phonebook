@@ -29,7 +29,9 @@ export const contactSlice = createSlice({
   name: 'contacts',
   initialState,
   reducers: {
-      filterContacts: (state,action)=>{ state.contacts.filter = action.payload }
+    filterContacts: (state, action) => {
+      state.contacts.filter = action.payload;
+    },
   },
   extraReducers: builder => {
     builder

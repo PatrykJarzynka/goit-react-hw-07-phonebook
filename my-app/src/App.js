@@ -5,13 +5,19 @@ import Filter from './components/Filter';
 import { nanoid } from 'nanoid';
 import styled from '@emotion/styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAsync, selectContacts, postAsync, deleteAsync, selectFilter, filterContacts } from './features2/contactsSlice';
+import {
+  fetchAsync,
+  selectContacts,
+  postAsync,
+  deleteAsync,
+  selectFilter,
+  filterContacts,
+} from './features/contactsSlice';
 import { useEffect } from 'react';
 
 const StyledHeader = styled.h1({
   marginLeft: 5,
 });
-
 
 function App() {
   useEffect(() => {
@@ -33,6 +39,7 @@ function App() {
 
   const addContact = (name, number) => {
     const contact = { name: name, phone: number, id: nanoid() };
+    debugger;
     const foundContant = contacts.find(contact => contact.name === name);
     if (foundContant) {
       alert(name + ' is already in contacts');
@@ -58,30 +65,3 @@ function App() {
 }
 
 export default App;
-
-// import React from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import './App.css';
-// import Test from './components/Test';
-// import { fetchAsync, selectContacts,postAsync } from './features2/contactsSlice';
-
-// function App() {
-//   const dispatch = useDispatch();
-//   const contact = useSelector(selectContacts)
-
-//   let test = {
-//     name: "asdas",
-//     phone: "123-123-123"
-//   }
-
-//   console.log(contact)
-//   return (
-//     <div className="App">
-//       <Test onClick={() => dispatch(fetchAsync())}></Test>
-//       <Test onClick={()=> dispatch(postAsync(test))}></Test>
-
-//     </div>
-//   );
-// }
-
-// export default App;
